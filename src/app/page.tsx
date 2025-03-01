@@ -537,26 +537,28 @@ export default function Home() {
       </div>
 
       {/* 🔀 Radio Playlist Toggle */}
-      <div className="frosted-glass flex space-x-4 p-4 rounded-lg shadow-md">
-        <button
-          onClick={() => handlePlaylistToggle("chill")}
-          className={`px-4 py-2 rounded ${activePlaylist === "chill" ? "bg-green-500" : "bg-gray-500"}`}
-        >
-          Chill Radio
-        </button>
-        <button
-          onClick={() => handlePlaylistToggle("boombap")}
-          className={`px-4 py-2 rounded ${activePlaylist === "boombap" ? "bg-green-500" : "bg-gray-500"}`}
-        >
-          Boom Bap Radio
-        </button>
-        <button
-          onClick={() => handlePlaylistToggle("acoustic")}
-          className={`px-4 py-2 rounded ${activePlaylist === "acoustic" ? "bg-green-500" : "bg-gray-500"}`}
-        >
-          Acoustic Hiking Radio
-        </button>
-      </div>
+<div className="frosted-glass flex flex-col space-y-4 p-4 rounded-lg shadow-md">
+  <div className="flex space-x-4">
+    <button
+      onClick={() => handlePlaylistToggle("chill")}
+      className={`px-4 py-2 rounded ${activePlaylist === "chill" ? "bg-green-500" : "bg-gray-500"}`}
+    >
+      Chill Radio
+    </button>
+    <button
+      onClick={() => handlePlaylistToggle("boombap")}
+      className={`px-4 py-2 rounded ${activePlaylist === "boombap" ? "bg-green-500" : "bg-gray-500"}`}
+    >
+      Boom Bap Radio
+    </button>
+  </div>
+  <button
+    onClick={() => handlePlaylistToggle("acoustic")}
+    className={`px-4 py-2 rounded ${activePlaylist === "acoustic" ? "bg-green-500" : "bg-gray-500"}`}
+  >
+    Acoustic Hiking Radio
+  </button>
+</div>
 
       {/* 🎵 Now Playing Section */}
       <div className="frosted-glass text-center">
