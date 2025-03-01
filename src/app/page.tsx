@@ -536,41 +536,27 @@ export default function Home() {
         </div>
       </div>
 
-      {/* 🔀 Radio Playlist Toggle */}
-      <div className="frosted-glass flex space-x-4 p-4 rounded-lg shadow-md">
-        <button
-          onClick={() => handlePlaylistToggle("chill")}
-          className={`px-4 py-2 rounded ${activePlaylist === "chill" ? "bg-green-500" : "bg-gray-500"}`}
-        >
-          Chill Radio
-        </button>
-        <button
-          onClick={() => handlePlaylistToggle("boombap")}
-          className={`px-4 py-2 rounded ${activePlaylist === "boombap" ? "bg-green-500" : "bg-gray-500"}`}
-        >
-          Boom Bap Radio
-        </button>
-        <button
-          onClick={() => handlePlaylistToggle("acoustic")}
-          className={`px-4 py-2 rounded ${activePlaylist === "acoustic" ? "bg-green-500" : "bg-gray-500"}`}
-        >
-          Hiking Radio
-        </button>
-      </div>
-
-      {/* 🎵 Now Playing Section */}
-      <div className="frosted-glass text-center">
-        <p className="title-font text-2xl font-semibold text-blue-300">Now Playing:</p>
-        <div className="relative w-64 h-10 bg-white/10 px-6 py-2 rounded-lg shadow-md overflow-hidden">
-          <motion.div
-            className="absolute left-0 w-max whitespace-nowrap"
-            animate={{ x: ["100%", "-100%"] }}
-            transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
-          >
-            {fakeTracks[nowPlayingIndex % fakeTracks.length].song} - {fakeTracks[nowPlayingIndex % fakeTracks.length].artist}
-          </motion.div>
-        </div>
-      </div>
+     {/* 🔀 Radio Playlist Toggle */}
+<div className="frosted-glass flex space-x-4 p-4 rounded-lg shadow-md">
+  <button
+    onClick={() => handlePlaylistToggle("chill")}
+    className={`px-4 py-2 rounded text-sm ${activePlaylist === "chill" ? "bg-green-500" : "bg-gray-500"}`}
+  >
+    Chill Radio
+  </button>
+  <button
+    onClick={() => handlePlaylistToggle("boombap")}
+    className={`px-4 py-2 rounded text-sm ${activePlaylist === "boombap" ? "bg-green-500" : "bg-gray-500"}`}
+  >
+    Boom Bap Radio
+  </button>
+  <button
+    onClick={() => handlePlaylistToggle("acoustic")}
+    className={`px-4 py-2 rounded text-sm ${activePlaylist === "acoustic" ? "bg-green-500" : "bg-gray-500"}`}
+  >
+    Hiking Radio
+  </button>
+</div>
 
       {/* 🎧 Audio Player */}
       <audio
