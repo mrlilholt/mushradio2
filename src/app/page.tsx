@@ -521,22 +521,7 @@ export default function Home() {
   priority
 />
 
-      {/* 🏷️ Title with Frosted Glass */}
-      <div className="frosted-glass text-center">
-        <div className="logo-container">
-          <Image
-            src="/mushroomRadioLogo.png"
-            alt="Mushroom Radio Logo"
-            className="logo-image"
-            ref={logoRef}
-            width={200}
-            height={200}
-            priority
-          />
-        </div>
-      </div>
-
-     {/* 🔀 Radio Playlist Toggle */}
+      {/* 🔀 Radio Playlist Toggle */}
 <div className="frosted-glass flex space-x-4 p-4 rounded-lg shadow-md">
   <button
     onClick={() => handlePlaylistToggle("chill")}
@@ -557,6 +542,20 @@ export default function Home() {
     Hiking Radio
   </button>
 </div>
+
+      {/* 🎵 Now Playing Section */}
+      <div className="frosted-glass text-center">
+        <p className="title-font text-2xl font-semibold text-blue-300">Now Playing:</p>
+        <div className="relative w-64 h-10 bg-white/10 px-6 py-2 rounded-lg shadow-md overflow-hidden">
+          <motion.div
+            className="absolute left-0 w-max whitespace-nowrap"
+            animate={{ x: ["100%", "-100%"] }}
+            transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
+          >
+            {fakeTracks[nowPlayingIndex % fakeTracks.length].song} - {fakeTracks[nowPlayingIndex % fakeTracks.length].artist}
+          </motion.div>
+        </div>
+      </div>
 
       {/* 🎧 Audio Player */}
       <audio
