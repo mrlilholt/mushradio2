@@ -513,13 +513,13 @@ export default function Home() {
       <Sidebar />
 
       {/* 🎥 Background Image */}
-      <Image
-        src="/mushroomRadioBG.png"
-        alt="Mushroom Radio Background"
-        fill
-        className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
-        priority
-      />
+<Image
+  src="/mushroomRadioBG.png"
+  alt="Mushroom Radio Background"
+  fill
+  className="absolute top-0 left-0 w-full h-screen object-cover z-[-1]"
+  priority
+/>
 
       {/* 🏷️ Title with Frosted Glass */}
       <div className="frosted-glass text-center">
