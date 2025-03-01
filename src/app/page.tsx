@@ -517,7 +517,7 @@ export default function Home() {
   src="/mushroomRadioBG.png"
   alt="Mushroom Radio Background"
   fill
-  className="absolute top-0 left-0 w-full h-screen object-cover z-[-1]"
+  className="absolute top-0 left-0 w-full h-screen object-contain z-[-1]"
   priority
 />
 
