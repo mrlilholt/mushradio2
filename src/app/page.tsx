@@ -554,7 +554,7 @@ export default function Home() {
           onClick={() => handlePlaylistToggle("acoustic")}
           className={`px-4 py-2 rounded ${activePlaylist === "acoustic" ? "bg-green-500" : "bg-gray-500"}`}
         >
-          Acoustic Hiking Radio
+          Hiking Radio
         </button>
       </div>
 
