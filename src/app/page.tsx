@@ -512,14 +512,14 @@ export default function Home() {
     <main className="flex flex-col items-center space-y-6 bg-transparent text-white min-h-screen justify-center relative w-full">
       <Sidebar />
 
-      {/* 🎥 Background Image */}
-      <Image
-        src="/mushroomRadioBG.png"
-        alt="Mushroom Radio Background"
-        fill
-        className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
-        priority
-      />
+     {/* 🎥 Background Image */}
+<Image
+  src="/mushroomRadioBG.png"
+  alt="Mushroom Radio Background"
+  fill
+  className="absolute top-0 left-0 w-full h-screen object-contain z-[-1]"
+  priority
+/>
 
       {/* 🏷️ Title with Frosted Glass */}
       <div className="frosted-glass text-center">
