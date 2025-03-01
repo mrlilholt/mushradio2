@@ -1,6 +1,6 @@
 "use client";
 import { useState, useRef, useEffect, useCallback } from "react";
-import { Play, Pause, RotateCcw, SkipForward, ChevronLeft, ChevronRight } from "lucide-react";
+import { Play, Pause, RotateCcw, SkipForward } from "lucide-react";
 import { motion } from "framer-motion";
 import Sidebar from "@/components/Sidebar";
 import Image from "next/image";
@@ -425,7 +425,6 @@ export default function Home() {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
   const logoRef = useRef<HTMLImageElement>(null);
-  const scrollRef = useRef<HTMLDivElement>(null);
 
   // use currentPlaylist based on activePlaylist state
   const currentPlaylist =
@@ -434,13 +433,6 @@ export default function Home() {
       : activePlaylist === "boombap"
       ? boomBapPlaylist
       : acousticHikingPlaylist;
-
-  const handleScroll = (direction: "left" | "right") => {
-    if (scrollRef.current) {
-      const scrollAmount = direction === "left" ? -200 : 200;
-      scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
-    }
-  };
 
   // Remove auto playback effect on page load
 
@@ -521,13 +513,13 @@ export default function Home() {
       <Sidebar />
 
       {/* 🎥 Background Image */}
-<Image
-  src="/mushroomRadioBG.png"
-  alt="Mushroom Radio Background"
-  fill
-  className="absolute top-0 left-0 w-full h-screen object-contain z-[-1]"
-  priority
-/>
+      <Image
+        src="/mushroomRadioBG.png"
+        alt="Mushroom Radio Background"
+        fill
+        className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
+        priority
+      />
 
       {/* 🏷️ Title with Frosted Glass */}
       <div className="frosted-glass text-center">
@@ -544,35 +536,27 @@ export default function Home() {
         </div>
       </div>
 
-    {/* 🔀 Radio Playlist Toggle */}
-<div className="frosted-glass flex items-center space-x-4 p-4 rounded-lg shadow-md w-1/4 h-1/2 mx-auto">
-  <button onClick={() => handleScroll("left")} className="p-2 bg-gray-700 rounded-full">
-    <ChevronLeft className="w-6 h-6 text-white" />
-  </button>
-  <div ref={scrollRef} className="flex space-x-4 overflow-x-auto scrollbar-hide">
-    <button
-      onClick={() => handlePlaylistToggle("chill")}
-      className={`px-4 py-2 rounded ${activePlaylist === "chill" ? "bg-green-500" : "bg-gray-500"}`}
-    >
-      Chill Radio
-    </button>
-    <button
-      onClick={() => handlePlaylistToggle("boombap")}
-      className={`px-4 py-2 rounded ${activePlaylist === "boombap" ? "bg-green-500" : "bg-gray-500"}`}
-    >
-      Boom Bap Radio
-    </button>
-    <button
-      onClick={() => handlePlaylistToggle("acoustic")}
-      className={`px-4 py-2 rounded ${activePlaylist === "acoustic" ? "bg-green-500" : "bg-gray-500"}`}
-    >
-      Acoustic Hiking Radio
-    </button>
-  </div>
-  <button onClick={() => handleScroll("right")} className="p-2 bg-gray-700 rounded-full">
-    <ChevronRight className="w-6 h-6 text-white" />
-  </button>
-</div>
+      {/* 🔀 Radio Playlist Toggle */}
+      <div className="frosted-glass flex space-x-4 p-4 rounded-lg shadow-md">
+        <button
+          onClick={() => handlePlaylistToggle("chill")}
+          className={`px-4 py-2 rounded ${activePlaylist === "chill" ? "bg-green-500" : "bg-gray-500"}`}
+        >
+          Chill Radio
+        </button>
+        <button
+          onClick={() => handlePlaylistToggle("boombap")}
+          className={`px-4 py-2 rounded ${activePlaylist === "boombap" ? "bg-green-500" : "bg-gray-500"}`}
+        >
+          Boom Bap Radio
+        </button>
+        <button
+          onClick={() => handlePlaylistToggle("acoustic")}
+          className={`px-4 py-2 rounded ${activePlaylist === "acoustic" ? "bg-green-500" : "bg-gray-500"}`}
+        >
+          Acoustic Hiking Radio
+        </button>
+      </div>
 
       {/* 🎵 Now Playing Section */}
       <div className="frosted-glass text-center">
