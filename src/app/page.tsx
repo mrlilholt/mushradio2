@@ -544,8 +544,8 @@ export default function Home() {
         </div>
       </div>
 
-     {/* 🔀 Radio Playlist Toggle */}
-<div className="frosted-glass flex items-center space-x-4 p-4 rounded-lg shadow-md w-1/2 mx-auto">
+    {/* 🔀 Radio Playlist Toggle */}
+<div className="frosted-glass flex items-center space-x-4 p-4 rounded-lg shadow-md w-1/4 h-1/2 mx-auto">
   <button onClick={() => handleScroll("left")} className="p-2 bg-gray-700 rounded-full">
     <ChevronLeft className="w-6 h-6 text-white" />
   </button>
